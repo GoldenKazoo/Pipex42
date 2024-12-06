@@ -37,6 +37,7 @@ static void	ft_free_cmds(char ***cmds)
 
 void	ft_free_data(t_data *data)
 {
+	printf("ALED");
 	free(data->cmd1);
 	free(data->cmd2);
 	ft_free_str(data->paths);

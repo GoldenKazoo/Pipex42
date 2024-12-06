@@ -32,7 +32,7 @@ typedef struct s_data
 }	t_data;
 
 void	ft_correct_args(int argc);
-void	ft_command_error(t_data data, int error);
+void	ft_command_error(t_data *data, int error);
 void	ft_init_data(t_data *data, char **argv, char **envp);
 void	ft_get_cmds(t_data *data);
 void	ft_child1_exec(t_data *data, char **envp);

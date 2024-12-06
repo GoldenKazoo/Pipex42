@@ -21,16 +21,19 @@ void	ft_correct_args(int argc)
 	}
 }
 
-void	ft_command_error(t_data data, int error)
+void	ft_command_error(t_data *data, int error)
 {
 	if (error == 1)
 	{
-		ft_putstr_fd(data.cmds[0][0], 2);
+		ft_free_data(data);
+		ft_putstr_fd(data->cmds[0][0], 2);
 		ft_putstr_fd(": command not found\n", 2);
 	}
 	else if (error == 2)
 	{
-		ft_putstr_fd(data.cmds[1][0], 2);
+		ft_free_data(data);
+		ft_putstr_fd(data->cmds[0][0], 2);
+		ft_putstr_fd(data->cmds[1][0], 2);
 		ft_putstr_fd(": command not found\n", 2);
 	}
 }
