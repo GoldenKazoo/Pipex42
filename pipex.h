@@ -40,6 +40,8 @@ void	ft_child2_exec(t_data *data, char **envp);
 void	ft_free_data(t_data *data);
 void	ft_close(int fd);
 void	ft_exit(t_data *data);
+void	ft_free_str(char **str);
+void	ft_free_cmds(char ***cmds);
 int		ft_get_args_cmds(t_data *data, char *cmd1, char *cmd2);
 char	*ft_get_path_cmd(char **paths_env, char *cmd);
 char	**ft_path_split(char **envp);

@@ -12,7 +12,7 @@
 
 #include "pipex.h"
 
-static void	ft_free_str(char **str)
+void	ft_free_str(char **str)
 {
 	int	i;
 
@@ -28,7 +28,7 @@ static void	ft_free_str(char **str)
 	free(str);
 }
 
-static void	ft_free_cmds(char ***cmds)
+void	ft_free_cmds(char ***cmds)
 {
 	ft_free_str(cmds[0]);
 	ft_free_str(cmds[1]);
@@ -37,7 +37,6 @@ static void	ft_free_cmds(char ***cmds)
 
 void	ft_free_data(t_data *data)
 {
-	printf("ALED");
 	free(data->cmd1);
 	free(data->cmd2);
 	ft_free_str(data->paths);

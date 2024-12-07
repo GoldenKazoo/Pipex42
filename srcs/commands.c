@@ -52,6 +52,14 @@ int	ft_get_args_cmds(t_data *data, char *cmd1, char *cmd2)
 
 void	ft_get_cmds(t_data *data)
 {
+	if(data->cmds[0][0] == NULL)
+	{
+		ft_command_error(data, 1);
+	}
+	if(data->cmds[1][0] == NULL)
+	{
+		ft_command_error(data, 1);
+	}
 	ft_get_cmd1(data);
 	ft_get_cmd2(data);
 }
