@@ -26,7 +26,7 @@ int	main(int argc, char **argv, char **envp)
 			ft_child1_exec(&data, envp);
 		}
 		else
-			ft_command_error(data, 1);
+			ft_command_error(&data, 1);
 	}
 	if (data.outfile_fd != -1)
 	{
@@ -36,7 +36,7 @@ int	main(int argc, char **argv, char **envp)
 			ft_child2_exec(&data, envp);
 		}
 		else
-			ft_command_error(data, 2);
+			ft_command_error(&data, 2);
 	}
 	ft_exit(&data);
 }

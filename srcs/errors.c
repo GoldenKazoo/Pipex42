@@ -21,33 +21,27 @@ void	ft_correct_args(int argc)
 	}
 }
 
-void	ft_command_error(t_data *data, int error)
+
+void	ft_command_error(t_data *data, int cmd_nb)
 {
-	if (error == 1)
+	if (cmd_nb == 1)
 	{
-		ft_putstr_fd("command not found:", 2);
-		ft_putstr_fd(" ", 2);
-		ft_putstr_fd(data->cmds[1][0], 2);
-		ft_putstr_fd("\n", 2);
-		ft_free_str(data->paths);
-		ft_free_cmds(data->cmds);
-		ft_close(data->infile_fd);
-		ft_close(data->outfile_fd);
-		ft_close(data->pipe_fds[0]);
-		ft_close(data->pipe_fds[1]);
+		if (data->cmds[0][0] == NULL)
+			ft_putstr_fd(" : command not found\n", 2);
+		else
+		{
+			ft_putstr_fd(data->cmds[0][0], 2);
+			ft_putstr_fd(": command not found\n", 2);
+		}
 	}
-	else if (error == 2)
+	else if (cmd_nb == 2)
 	{
-		ft_putstr_fd("command not found:", 2);
-		ft_putstr_fd(" ", 2);
-		ft_putstr_fd(data->cmds[1][0], 2);
-		ft_putstr_fd("\n", 2);
-		ft_free_str(data->paths);
-		ft_free_cmds(data->cmds);
-		ft_close(data->infile_fd);
-		ft_close(data->outfile_fd);
-		ft_close(data->pipe_fds[0]);
-		ft_close(data->pipe_fds[1]);
+		if (data->cmds[1][0] == NULL)
+			ft_putstr_fd(" : command not found\n", 2);
+		else
+		{
+			ft_putstr_fd(data->cmds[1][0], 2);
+			ft_putstr_fd(": command not found\n", 2);
+		}
 	}
-	exit(1);
 }

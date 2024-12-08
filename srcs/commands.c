@@ -14,7 +14,9 @@
 
 static void	ft_get_cmd1(t_data *data)
 {
-	if (access(data->cmds[0][0], X_OK) == 0)
+	if (data->cmds[0][0] == NULL)
+		data->cmd1 = NULL;
+	else if (access(data->cmds[0][0], X_OK) == 0)
 		data->cmd1 = ft_strdup(data->cmds[0][0]);
 	else
 		data->cmd1 = ft_get_path_cmd(data->paths,
@@ -23,7 +25,9 @@ static void	ft_get_cmd1(t_data *data)
 
 static void	ft_get_cmd2(t_data *data)
 {
-	if (access(data->cmds[1][0], X_OK) == 0)
+	if (data->cmds[1][0] == NULL)
+		data->cmd2 = NULL;
+	else if (access(data->cmds[1][0], X_OK) == 0)
 		data->cmd2 = ft_strdup(data->cmds[1][0]);
 	else
 		data->cmd2 = ft_get_path_cmd(data->paths,
@@ -52,14 +56,6 @@ int	ft_get_args_cmds(t_data *data, char *cmd1, char *cmd2)
 
 void	ft_get_cmds(t_data *data)
 {
-	if(data->cmds[0][0] == NULL)
-	{
-		ft_command_error(data, 1);
-	}
-	if(data->cmds[1][0] == NULL)
-	{
-		ft_command_error(data, 1);
-	}
 	ft_get_cmd1(data);
 	ft_get_cmd2(data);
 }
