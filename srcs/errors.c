@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zchagar <zchagar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 18:54:16 by zchagar           #+#    #+#             */
-/*   Updated: 2024/12/06 18:54:19 by zchagar          ###   ########.fr       */
+/*   Updated: 2024/12/11 17:47:16 by zchagar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ void	ft_correct_args(int argc)
 {
 	if (argc != 5)
 	{
-		ft_putstr_fd("Error\nto use: ./pipex <infile> <cmd1> <cmd2> <outfile>\n", 1);
+		ft_putstr_fd
+			("Error\nto use: ./pipex <infile> <cmd1><cmd2> <outfile>\n", 1);
 		exit(1);
 	}
 }
-
 
 void	ft_command_error(t_data *data, int cmd_nb)
 {
