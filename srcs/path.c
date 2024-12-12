@@ -6,13 +6,13 @@
 /*   By: zchagar <zchagar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 18:54:40 by zchagar           #+#    #+#             */
-/*   Updated: 2024/12/06 18:54:41 by zchagar          ###   ########.fr       */
+/*   Updated: 2024/12/12 09:40:32 by zchagar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-static char	*ft_get_path(char **envp)
+char	*ft_get_path(char **envp)
 {
 	int	i;
 

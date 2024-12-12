@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   data_init.c                                        :+:      :+:    :+:   */
+/*   init_data.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zchagar <zchagar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 18:54:10 by zchagar           #+#    #+#             */
-/*   Updated: 2024/12/06 18:54:12 by zchagar          ###   ########.fr       */
+/*   Updated: 2024/12/12 08:45:38 by zchagar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,13 @@ void	ft_init_data(t_data *data, char **argv, char **envp)
 {
 	data->pid1 = 0;
 	data->pid2 = 0;
+	data->error = 0;
 	data->outfile_fd = open(argv[4], O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (data->outfile_fd == -1)
+	{
+		data->error = 1;
 		perror(argv[4]);
+	}
 	data->infile_fd = open(argv[1], O_RDONLY);
 	if (data->infile_fd == -1)
 		perror(argv[1]);

@@ -6,7 +6,7 @@
 /*   By: zchagar <zchagar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 18:54:45 by zchagar           #+#    #+#             */
-/*   Updated: 2024/12/11 17:47:28 by zchagar          ###   ########.fr       */
+/*   Updated: 2024/12/12 09:23:38 by zchagar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,19 @@ void	ft_close(int fd)
 
 void	ft_exit(t_data *data)
 {
+	int	status;
+	int	exit_status;
+
 	ft_close(data->infile_fd);
 	ft_close(data->outfile_fd);
 	ft_close(data->pipe_fds[0]);
 	ft_close(data->pipe_fds[1]);
-	waitpid(data->pid1, NULL, 0);
-	waitpid(data->pid2, NULL, 0);
+	waitpid(data->pid1, &status, 0);
+	waitpid(data->pid2, &status, 0);
+	if (data-> error != 0)
+		exit_status = data->error;
+	else
+		exit_status = WEXITSTATUS(status);
 	ft_free_data(data);
-	exit(0);
+	exit(exit_status);
 }

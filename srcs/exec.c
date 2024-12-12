@@ -6,14 +6,14 @@
 /*   By: zchagar <zchagar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 18:54:24 by zchagar           #+#    #+#             */
-/*   Updated: 2024/12/06 18:54:25 by zchagar          ###   ########.fr       */
+/*   Updated: 2024/12/12 09:40:11 by zchagar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-static void	ft_exec_cmd1(t_data *data, char **envp)
-{		
+void	ft_exec_cmd1(t_data *data, char **envp)
+{
 	if (dup2(data->pipe_fds[1], STDOUT_FILENO) == -1)
 		perror("dup2");
 	ft_close(data->pipe_fds[0]);
@@ -30,7 +30,7 @@ static void	ft_exec_cmd1(t_data *data, char **envp)
 	}
 }
 
-static void	ft_exec_cmd2(t_data *data, char **envp)
+void	ft_exec_cmd2(t_data *data, char **envp)
 {
 	if (dup2(data->pipe_fds[0], STDIN_FILENO) == -1)
 		perror("dup2");

@@ -6,7 +6,7 @@
 /*   By: zchagar <zchagar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 18:54:24 by zchagar           #+#    #+#             */
-/*   Updated: 2024/12/06 18:54:25 by zchagar          ###   ########.fr       */
+/*   Updated: 2024/12/12 08:44:32 by zchagar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_data
 	char	*cmd2;
 	int		infile_fd;
 	int		outfile_fd;
+	int		error;
 	int		pid1;
 	int		pid2;
 	int		pipe_fds[2];

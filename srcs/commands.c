@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cmd.c                                              :+:      :+:    :+:   */
+/*   commands.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zchagar <zchagar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 18:54:03 by zchagar           #+#    #+#             */
-/*   Updated: 2024/12/06 18:54:06 by zchagar          ###   ########.fr       */
+/*   Updated: 2024/12/12 09:07:42 by zchagar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-static void	ft_get_cmd1(t_data *data)
+void	ft_get_cmd1(t_data *data)
 {
 	if (data->cmds[0][0] == NULL)
 		data->cmd1 = NULL;
@@ -23,7 +23,7 @@ static void	ft_get_cmd1(t_data *data)
 				data->cmds[0][0]);
 }
 
-static void	ft_get_cmd2(t_data *data)
+void	ft_get_cmd2(t_data *data)
 {
 	if (data->cmds[1][0] == NULL)
 		data->cmd2 = NULL;

@@ -6,7 +6,7 @@
 /*   By: zchagar <zchagar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 18:54:16 by zchagar           #+#    #+#             */
-/*   Updated: 2024/12/11 17:47:16 by zchagar          ###   ########.fr       */
+/*   Updated: 2024/12/12 08:54:01 by zchagar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ void	ft_command_error(t_data *data, int cmd_nb)
 			ft_putstr_fd(data->cmds[1][0], 2);
 			ft_putstr_fd(": command not found\n", 2);
 		}
+		data->error = 127;
 	}
 }
